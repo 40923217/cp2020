@@ -1,0 +1,213 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CMSiMDE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>40923217 cp2020</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">40923217 cp2020</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='首頁.html'>首頁</a><li class='has-children'><a href='Homework.html'>Homework</a><ul class='dropdown'><li class='has-children'><a href='PCH 7.html'>PCH 7</a><ul class='dropdown'><li><a href='Overview.html'>Overview</a><li><a href='AGP Slots.html'>AGP Slots</a><li><a href='Processors.html'>Processors</a><li><a href='Video Displays and Video Cards.html'>Video Displays and Video Cards</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Processors << <a href='Processors.html'>Previous</a> <br /><h1>Video Displays and Video Cards</h1>
+<p><span style="color: #000000;"><span>Earlier, we mentioned the various types of expansion cards; now we are going to focus on video/graphics cards. Video cards come in many varieties, and are sold under numerous different naming conventions, like graphics cards, graphics accelerator cards, or graphics adapters. These cards are add-on cards that create the images you see on the display/monitor. They can come in a variety of expansion card types to fit into the various expansion slots, such as PCI express (PCIe) that is currently dominant, advanced graphics port (AGP), or the older PCI slots. While many low-end desktops come with an integrated graphics chip in the CPU instead of using a dedicated card, this is not suitable for 3D games or CAD/CAM (computer-aided manufacturing) workstations. Therefore, many users will opt to use an add-on graphics card, like the one displayed below, to improve their gaming performance.</span></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><span><img alt="Red and silver video card with enclosed shroud and dedicated cooling fan." src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image12.png"/></span></span></p>
+<p style="text-align: center;">Video card. Photo used under CC-BY-NC-ND license from Nelson Wu.</p>
+<p id="N106AC" lang="">Video cards contain a very strong processor called a graphics processing unit (GPU) which performs the extensive mathematical calculations involved in rendering the 3D images that most games require. This extensive processing creates a lot of heat. So, properly cooling the graphics card is essential. Many cards, especially lower-powered ones, will use a passive heat sink for quiet operations, or will rely on the case fans to remove the heat. Most modern graphics cards actually use dedicated cooling fans and heat shrouds for better cooling, but they are much noisier due to the fans involved, and often required external power. The image above shows an example of a video card with an enclosed shroud and active cooling fan to draw the heat away from the card.</p>
+<p id="N106AF" lang="">Installing video cards is very similar to installing any other expansion card. First, you must go into the BIOS and ensure the slot is enabled (AGP or PCIe x16). This may require some configuration changes, such as the AGP speed, turning off the onboard graphics chip, or adjusting the graphics memory size. Next, you will want to power off the machine, remove the power, use proper ESD precautions, and install the new expansion cards into the proper slot. Next, cable the monitor to the card, plug the computer back into the outlet, and turn on the computer. Once the computer boots into the operating system, you will need to install the device drivers to ensure the operating system can provide the best graphics available from your new card.</p>
+<p><span style="color: #ff0000;" title="Quick scroll up">Video Output</span></p>
+<p><span style="color: #000000;" title="Quick scroll up"><span>Video output comes in various types of connectors based on the motherboard’s chipset or the graphics card’s chipset. The standard that has been used for the past few decades is the VGA (video graphics adapter), which is a DB-15 style connector. VGA relies on providing a good-quality analog output to a traditional computer monitor. The port for this connector is the blue one on the left in the image below.</span></span></p>
+<p style="text-align: center;"><span style="color: #000000;" title="Quick scroll up"><span><img alt="Photograph depicting a blue VGA connector, a white DVI connector and a black HDMI type A connector." src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image13.png"/></span></span></p>
+<p style="text-align: center;"><span style="color: #000000;" title="Quick scroll up"><span>Blue VGA connector, white DVI connector, and black HDMI type A video connector. Photo used under CC-BY license from Davis Mosans.</span></span></p>
+<p id="N106CC" lang="">The next connector port, shown in white in the middle of the photo above, is called DVI, or digital video interface. It comes in DVI-D (for digital output only), or DVI-I (for integrated output that can provide digital or analog output) varieties. A DVI-I connector can be used with an adapter to operate with a traditional VGA monitor in analog mode, as well.</p>
+<p id="N106CF" lang="">The third connector, shown on the right of the image, is an HDMI, or high-definition multimedia interface, connection. HDMI comes with three standard connector types: type A (standard), C (mini), and D (micro). Although there is a designation for a type B, it has not been adopted by any manufacturers at this time. Version 2.0 supports 4K UHD and HDR-enabled devices. Micro HDMI has been largely adopted by the mobile telephone market and is included on almost all current models. The special thing about HDMI is that it isn’t limited to carrying just video, but instead carries both audio and video over a single HDMI cable. HDMI is fully digital and doesn’t support analog displays.</p>
+<p id="N106D2" lang="">Another connector is DisplayPort, which has two form factors, as shown in the images below. DisplayPort was designed by the Video Electronics Standards Association (VESA). Mini DisplayPort was a standard announced by Apple in 2008 and adopted by VESA in 2009 to be included in version 1.2 (<a href="https://en.wikipedia.org/wiki/DisplayPort#1.2" id="_i_4" lang="" target="_blank">https://en.wikipedia.org/wiki/DisplayPort#1.2</a>).</p>
+<p id="N106DB" lang="">This makes it an ideal interface connector for laptops and mobile devices, similar to HDMI mini. It is also similar to HDMI in that it supports both video and audio with resolutions up to 3840x2160, which can support 4K UHD. DisplayPort can be found on IBM-clone (PC) machines and is gaining traction in the marketplace on mobile devices as well.</p>
+<p lang="" style="text-align: center;"><img alt="Photograph of a DisplayPort on a Lenovo computer." src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image34.jpeg"/></p>
+<p lang="" style="text-align: center;">DisplayPort. Photo used under CC-BY license from Wirepath (Yoe).</p>
+<p lang="" style="text-align: center;"><img alt="Photograph of a Mini DisplayPort on an Apple computer." height="158" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image14.png" width="237"/></p>
+<p lang="" style="text-align: center;">Mini DisplayPort. Photo used under CC-BY-SA license from William Hook.</p>
+<p lang="" style="text-align: left;"><span>Component/RGB (red green blue) is another high-definition connector type, but provides its output in analog format and only up to 720p of resolution. This was commonly used by VCR and DVD players, to connect to television sets, but can sometimes be found on older computers as a secondary output connector. Using RCA connectors, component video actually requires three connectors to pass the video signal to the TV, each one with a different colored label of red, green, and blue. Audio signals require separate patch cords.</span></p>
+<p lang="" style="text-align: center;"><span><img alt="Photograph of a component/RGB with three ports arranged horizontally. Starting on the left, there is a green port labeled Y, a blue port labeled PB/CB, and a red port labeled PR/CR." height="231" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image15.jpeg" width="307"/></span></p>
+<p lang="" style="text-align: center;"><span>Component/RGB. Photo used under CC-BY-SA license from Wikipedia.</span></p>
+<p lang="" style="text-align: left;"><span>S-video is a very old type of connection that was originally used to connect video cameras and VCRs to televisions. They provide a resolution of up to 480p in analog signal only. They are often labeled as “TV out” on older computer systems, and are used only as a secondary display output.</span></p>
+<p lang="" style="text-align: center;"><span><img alt="Photograph depicting an S-video connection, which is a round connection with seven pins." height="228" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image16.jpeg" width="304"/></span></p>
+<p lang="" style="text-align: center;"><span>S-video connection. Photo used under CC-BY-NC-ND license from yum 9 me.</span></p>
+<p id="N10720" lang="">Finally, we have the oldest type of video interface, Composite Video. This is by far the lowest quality output of all the types we have discussed. This cable also uses RCA connectors with an output of 480p. This cable combines all the video signals over a single RCA cable, usually labeled as “video,” and the connector itself is yellow. The Composite Video cable operates in analog signal only with the audio signal separate as well. Composite differs from Component in that audio cable are bundled together with the Composite Video (Red, White, Yellow), whereas, Component uses a total of five cables (Red, Green, Blue for video and the standard Red and White for audio).</p>
+<p lang="" style="text-align: center;"><img alt="Composite video RCA cable connector with the cables connected. There are three colored connectors: red, white, and yellow. The yellow connector is labeled ‘video,’ and the others are labeled ‘audio.’" height="186" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image17.jpeg" width="279"/></p>
+<p lang="" style="text-align: center;">Composite video RCA cable connector. Photo used under CC-BY-NC license from Dani Armengol Garreta.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #ff0000;">視頻顯示器和視頻卡<br/><br/></span></pre><br />Processors << <a href='Processors.html'>Previous</a> </div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
