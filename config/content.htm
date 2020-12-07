@@ -464,3 +464,18 @@
 <p lang="" style="text-align: left;"><span><span><span><span><span>在下面的實驗練習中，您應該卸下舊的機箱風扇並安裝新的機箱風扇。</span><span>確保使用適當的安全預防措施。</span><span>在本實驗中，您可以假定已經採取了ESD預防措施。</span></span></span></span></span></p>
 <h1 style="text-align: left;"><span><span><span><span><span>W8</span></span></span></span></span></h1>
 <p><span><span><span><span><span>kaggle:<a href="https://www.kaggle.com/nfu40923217/cp2020w8">https://www.kaggle.com/nfu40923217/cp2020w8</a></span></span></span></span></span></p>
+<h1><span><span><span><span><span>hw2</span></span></span></span></span></h1>
+<h2><span><span><span><span><span>作業1</span></span></span></span></span></h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+#導入urllib.request
+url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+#設target_url = "網址"
+cp17 = []
+#設cp1b=數列
+for line in urllib.request.urlopen(url):
+#重複打開target_url的迴圈定義line
+    cp17.append(int(line.decode('utf-8').rstrip()))
+    #把line重新編碼加進cp1b(數列)   註:rstrip()刪除字尾符號
+print(cp1b)
+#印出cp17</pre>
+<p><span><span><span><span><span></span></span></span></span></span></p>
