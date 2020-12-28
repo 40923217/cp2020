@@ -133,8 +133,68 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W8 << <a href='W8.html'>Previous</a> <a href='作業1.html'>Next</a> >> 作業1<br /><h1>hw2</h1>
-<br />W8 << <a href='W8.html'>Previous</a> <a href='作業1.html'>Next</a> >> 作業1</div>
+    <div id="tipue_search_content">第5題 List Overlap(清單重疊) << <a href='第5題 List Overlap(清單重疊).html'>Previous</a> <a href='解答-1.html'>Next</a> >> 解答-1<br /><h1>題目-1</h1>
+<p><span style="color: #ff0000;">Exercise 5</span></p>
+<p>Take two lists, say for example these two:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span></code></pre>
+</figure>
+<p>and write a program that returns a list that contains only the elements that are common between the lists (without duplicates). Make sure your program works on two lists of different sizes.</p>
+<p>Extras:</p>
+<ol>
+<li>Randomly generate two lists to test this</li>
+<li>Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)</li>
+</ol>
+<p><span style="color: #ff0000;">List properties</span></p>
+<p><span style="color: #000000;"></span>In other words, “things you can do with lists.”</p>
+<p>One of the interesting things you can do with lists in Python is figure out whether something is inside the list or not. For example:</p>
+<figure class="highlight">
+<pre><code class="language-pycon" data-lang="pycon">  &gt;&gt;&gt; a = [5, 10, 15, 20]
+  &gt;&gt;&gt; 10 in a
+  True
+  &gt;&gt;&gt; 3 in a
+  False</code></pre>
+</figure>
+<p>You can of course use this in loops, conditionals, and any other programming constructs.</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">list_of_students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Michele"</span><span class="p">,</span> <span class="s">"Sara"</span><span class="p">,</span> <span class="s">"Cassie"</span><span class="p">]</span>
+
+  <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Type name to check: "</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">list_of_students</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"This student is enrolled."</span><span class="p">)</span></code></pre>
+</figure>
+<p><span style="color: #ff0000;">清單 5</span></p>
+<p><span>拿兩個列表，舉例來說，這兩個：</span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span></code></pre>
+</figure>
+<p><span><span>並編寫一個程序，該程序返回一個列表，該列表僅包含列表之間的公共元素（無重複項）。</span><span>確保您的程序可以在兩個不同大小的列表上運行。</span></span></p>
+<p><span><span>附加功能：</span></span></p>
+<ol>
+<li><span><span>隨機生成兩個列表進行測試</span></span></li>
+<li><span><span>用Python的一行代碼編寫（不要擔心，如果您現在不能解決這個問題，我們會盡快處理）</span></span></li>
+</ol>
+<p><span style="color: #ff0000;">列出屬性</span></p>
+<p><span style="color: #000000;"></span><span>換句話說，“您可以使用列表執行的操作”。</span></p>
+<p><span><span>您可以使用Python中的列表進行有趣的操作之一，就是確定列表中是否包含某些內容。</span><span>例如：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-pycon" data-lang="pycon">  &gt;&gt;&gt; a = [5, 10, 15, 20]
+  &gt;&gt;&gt; 10 in a
+  True
+  &gt;&gt;&gt; 3 in a
+  False</code></pre>
+</figure>
+<p><span><span>您當然可以在循環，條件和任何其他編程構造中使用它。</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">list_of_students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Michele"</span><span class="p">,</span> <span class="s">"Sara"</span><span class="p">,</span> <span class="s">"Cassie"</span><span class="p">]</span>
+
+  <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Type name to check: "</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">list_of_students</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"This student is enrolled."</span><span class="p">)</span></code></pre>
+</figure>
+<br />第5題 List Overlap(清單重疊) << <a href='第5題 List Overlap(清單重疊).html'>Previous</a> <a href='解答-1.html'>Next</a> >> 解答-1</div>
         
     <!-- footer -->
       <div class="container">

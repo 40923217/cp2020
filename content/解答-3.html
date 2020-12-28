@@ -133,8 +133,23 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W8 << <a href='W8.html'>Previous</a> <a href='作業1.html'>Next</a> >> 作業1<br /><h1>hw2</h1>
-<br />W8 << <a href='W8.html'>Previous</a> <a href='作業1.html'>Next</a> >> 作業1</div>
+    <div id="tipue_search_content">題目-3 << <a href='題目-3.html'>Previous</a> <br /><h1>解答-3</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import requests
+from bs4 import BeautifulSoup
+ 
+base_url = 'http://www.nytimes.com'
+r = requests.get(base_url)
+soup = BeautifulSoup(r.text)
+
+filename = input("File to save to: ")
+
+with open(filename, 'w') as f:
+  for story_heading in soup.find_all(class_="story-heading"): 
+      if story_heading.a: 
+          f.write(story_heading.a.text.replace("\n", " ").strip())
+      else: 
+          f.write(story_heading.contents[0].strip())</pre>
+<p></p><br />題目-3 << <a href='題目-3.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

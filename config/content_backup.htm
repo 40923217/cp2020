@@ -464,3 +464,374 @@
 <p lang="" style="text-align: left;"><span><span><span><span><span>在下面的實驗練習中，您應該卸下舊的機箱風扇並安裝新的機箱風扇。</span><span>確保使用適當的安全預防措施。</span><span>在本實驗中，您可以假定已經採取了ESD預防措施。</span></span></span></span></span></p>
 <h1 style="text-align: left;"><span><span><span><span><span>W8</span></span></span></span></span></h1>
 <p><span><span><span><span><span>kaggle:<a href="https://www.kaggle.com/nfu40923217/cp2020w8">https://www.kaggle.com/nfu40923217/cp2020w8</a></span></span></span></span></span></p>
+<h1><span><span><span><span><span>hw2</span></span></span></span></span></h1>
+<h2><span><span><span><span><span>作業1</span></span></span></span></span></h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+#導入urllib.request
+url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+#設target_url = "網址"
+cp17 = []
+#設cp1b=數列
+for line in urllib.request.urlopen(url):
+#重複打開target_url的迴圈定義line
+    cp17.append(int(line.decode('utf-8').rstrip()))
+    #把line重新編碼加進cp1b(數列)   註:rstrip()刪除字尾符號
+print(cp1b)
+#印出cp17</pre>
+<h1><span>hw3</span></h1>
+<h2><span>第5題 List Overlap(清單重疊)</span></h2>
+<h3><span>題目</span></h3>
+<p><span style="color: #ff0000;">Exercise 5</span></p>
+<p>Take two lists, say for example these two:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span></code></pre>
+</figure>
+<p>and write a program that returns a list that contains only the elements that are common between the lists (without duplicates). Make sure your program works on two lists of different sizes.</p>
+<p>Extras:</p>
+<ol>
+<li>Randomly generate two lists to test this</li>
+<li>Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)</li>
+</ol>
+<p><span style="color: #ff0000;">List properties</span></p>
+<p><span style="color: #000000;"></span>In other words, “things you can do with lists.”</p>
+<p>One of the interesting things you can do with lists in Python is figure out whether something is inside the list or not. For example:</p>
+<figure class="highlight">
+<pre><code class="language-pycon" data-lang="pycon">  &gt;&gt;&gt; a = [5, 10, 15, 20]
+  &gt;&gt;&gt; 10 in a
+  True
+  &gt;&gt;&gt; 3 in a
+  False</code></pre>
+</figure>
+<p>You can of course use this in loops, conditionals, and any other programming constructs.</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">list_of_students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Michele"</span><span class="p">,</span> <span class="s">"Sara"</span><span class="p">,</span> <span class="s">"Cassie"</span><span class="p">]</span>
+
+  <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Type name to check: "</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">list_of_students</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"This student is enrolled."</span><span class="p">)</span></code></pre>
+</figure>
+<p><span style="color: #ff0000;">清單 5</span></p>
+<p><span>拿兩個列表，舉例來說，這兩個：</span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span></code></pre>
+</figure>
+<p><span><span>並編寫一個程序，該程序返回一個列表，該列表僅包含列表之間的公共元素（無重複項）。</span><span>確保您的程序可以在兩個不同大小的列表上運行。</span></span></p>
+<p><span><span>附加功能：</span></span></p>
+<ol>
+<li><span><span>隨機生成兩個列表進行測試</span></span></li>
+<li><span><span>用Python的一行代碼編寫（不要擔心，如果您現在不能解決這個問題，我們會盡快處理）</span></span></li>
+</ol>
+<p><span style="color: #ff0000;">列出屬性</span></p>
+<p><span style="color: #000000;"></span><span>換句話說，“您可以使用列表執行的操作”。</span></p>
+<p><span><span>您可以使用Python中的列表進行有趣的操作之一，就是確定列表中是否包含某些內容。</span><span>例如：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-pycon" data-lang="pycon">  &gt;&gt;&gt; a = [5, 10, 15, 20]
+  &gt;&gt;&gt; 10 in a
+  True
+  &gt;&gt;&gt; 3 in a
+  False</code></pre>
+</figure>
+<p><span><span>您當然可以在循環，條件和任何其他編程構造中使用它。</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">list_of_students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Michele"</span><span class="p">,</span> <span class="s">"Sara"</span><span class="p">,</span> <span class="s">"Cassie"</span><span class="p">]</span>
+
+  <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Type name to check: "</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">list_of_students</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"This student is enrolled."</span><span class="p">)</span></code></pre>
+</figure>
+<h3><span>解答</span></h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">list_of_students = ["Michele", "Sara", "Cassie"]
+name = input("Type name to check: ")
+if name in list_of_students:
+print("This student is enrolled.")</pre>
+<h2><span>第20題 Element Search(元素搜索)</span></h2>
+<h3><span>題目</span></h3>
+<p><span style="color: #ff0000;">Exercise 20</span></p>
+<p><span style="color: #000000;"></span>Write a function that takes an ordered list of numbers (a list where the elements are in order from smallest to largest) and another number. The function decides whether or not the given number is inside the list and returns (then prints) an appropriate boolean.</p>
+<p>Extras:</p>
+<ul>
+<li>Use binary search.</li>
+</ul>
+<p><span style="color: #ff0000;">Discussion</span></p>
+<p><span style="color: #000000;"></span>Topics:</p>
+<ol>
+<li>Booleans - True and False</li>
+<li>Equality testing</li>
+<li>Binary search</li>
+</ol>
+<p><span style="color: #ff0000;">Booleans</span></p>
+<p><span style="color: #000000;"></span>When you are writing programs, there is often a time when you need to make a decision about something based on the truthfulness of something else. Basically, you need to make a decision based on whether something is TRUE or something is FALSE.</p>
+<p>An obvious example is when using conditionals:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">michele_age</span> <span class="o">=</span> <span class="mi">22</span>
+  <span class="n">truth_value</span> <span class="o">=</span> <span class="n">michele_age</span> <span class="o">&gt;</span> <span class="mi">17</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">truth_value</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Michele can see a rated R movie"</span><span class="p">)</span></code></pre>
+</figure>
+<p>(We talked about this idea of conditionals in<span> </span><a href="https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html">a previous post</a>.)</p>
+<p>But what is happening behind the scenes is that the statement<span> </span><code class="highlighter-rouge">michele_age &gt; 17</code><span> </span>is being evaluated into a type that is either<span> </span><code class="highlighter-rouge">True</code><span> </span>or<span> </span><code class="highlighter-rouge">False</code>. This is then getting stored inside the variable<span> </span><code class="highlighter-rouge">truth_value</code>, and then the decision is being made inside the conditional.</p>
+<p>Here is another example:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">17</span><span class="p">:</span> 
+      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated R movie"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated PG-13 movie"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+      <span class="k">print</span><span class="p">(</span><span class="s">"can only see rated PG movies"</span><span class="p">)</span></code></pre>
+</figure>
+<p>What the<span> </span><code class="highlighter-rouge">while True</code><span> </span>statement does at the beginning of the code segment is continue asking for an age and printing a response - it never stops. (To stop it, press CTRL-C in a terminal or in the Python shell).</p>
+<p>These types -<span> </span><code class="highlighter-rouge">True</code><span> </span>and<span> </span><code class="highlighter-rouge">False</code><span> </span>are called<span> </span><strong>boolean</strong><span> </span>types or<span> </span><strong>boolean</strong><span> </span>variables. They can only take on two values, either<span> </span><code class="highlighter-rouge">True</code><span> </span>or<span> </span><code class="highlighter-rouge">False</code>.</p>
+<p>For more extensive reading on Python booleans, take a look at<span> </span><a href="http://www.pythonforbeginners.com/basics/boolean">these</a><span> </span><a href="http://learnpythonthehardway.org/book/ex28.html">resources</a>.</p>
+<p><span style="color: #ff0000;">Equality testing on strings</span></p>
+<p><span style="color: #000000;"></span>Scenarios come up where you need to test if things are equal to each other - numbers or strings or something else. We covered this idea in<span> </span><a href="https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html">a previous post</a>, but it is worth returning to again, this time for strings.</p>
+<p>Good thing it’s easy!</p>
+<p>Remember, comparing numbers for equality is done with an<span> </span><code class="highlighter-rouge">==</code><span> </span>sign, like so:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">age</span> <span class="o">=</span> <span class="mi">21</span>
+  <span class="k">if</span> <span class="n">age</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You are 21!"</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You're old."</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Young one!"</span><span class="p">)</span></code></pre>
+</figure>
+<p>Turns out, comparing strings is equally (hehe..) simple, using a<span> </span><code class="highlighter-rouge">==</code><span> </span>to check for equality and<span> </span><code class="highlighter-rouge">!=</code><span> </span>to check for inequality.</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
+  <span class="k">if</span> <span class="n">password</span> <span class="o">==</span> <span class="s">"unsafepassword"</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You may enter."</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Try again!"</span><span class="p">)</span></code></pre>
+</figure>
+<p>Or, a more practical password-checking piece of code:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">real_password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
+  <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
+  <span class="k">while</span> <span class="n">user_password</span> <span class="o">!=</span> <span class="n">real_password</span><span class="p">:</span>
+    <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"You may enter!"</span><span class="p">)</span></code></pre>
+</figure>
+<p><span style="color: #ff0000;">Binary search</span></p>
+<p><span style="color: #000000;"></span>There are a number of ways to search for elements in a list, and there is no one correct way to do so. The point of this exercise is to get you thinking about possible ways to search for elements in the list, in an entire sequence of exercises about lists, searching, and sorting. This exercise might seem silly and easy at first, but the more you dive into this topic, the more difficult it becomes.</p>
+<p>The word “binary” means there are two choices (in computers, often this is 0 or 1, but it really means any choice between two things). “Search” is to look for something. So the main idea behind binary search is to look for something in a way that gives you a decision tree for where to look, containing two choices. Let me give you an example:</p>
+<p>Let’s take the list<span> </span><code class="highlighter-rouge">a = [1, 3, 5, 30, 42, 43, 500]</code>. It is an “ordered list”, or a list where the elements in the list go from smaller to larger. Let’s say we want to know whether the element<span> </span><code class="highlighter-rouge">9</code><span> </span>is in the list or not. Here is what we do:</p>
+<ul>
+<li>Look at the middle element in the list - it is ‘30’. * ‘9 &lt; 30’, so let us ignore the elements to the right of ‘30’.</li>
+<li>The new list we are looking at is now<span> </span><code class="highlighter-rouge">[1, 3, 5]</code>.</li>
+<li>Look at the middle element in this new list - it is<span> </span><code class="highlighter-rouge">3</code>.</li>
+<li>‘9 &gt; 3’, so ignore the elements to the left of<span> </span><code class="highlighter-rouge">3</code>.</li>
+<li>The new list we are looking at is<span> </span><code class="highlighter-rouge">[5]</code>.</li>
+<li>The list has one element and it is not<span> </span><code class="highlighter-rouge">9</code>.</li>
+<li><code class="highlighter-rouge">9</code><span> </span>is not in the list.</li>
+</ul>
+<p>What the example shows is that in an ordered list, knowing how the element you are looking for compares to another element in the list splits the list in two - one half where the element can be, and one where it definitely cannot be. In the case where our list contains millions of elements, knowing that we can cut the “search space” in half is a great increase in efficiency.</p>
+<p>When you are writing the solution, first try to write it without binary search. Then when you want to try implementing binary search, write a separate function. In the solution I will give an example for how to write a binary search in Python.</p>
+<p><span style="color: #ff0000;">練習20</span></p>
+<p><span>編寫一個函數，該函數接受一個有序的數字列表（一個元素從最小到最大的順序列表）和另一個數字。該函數確定給定的數字是否在列表中，並返回（然後打印）適當的布爾值。</span></p>
+<p><span><span>附加功能：</span></span></p>
+<ul>
+<li><span><span>使用二進制搜索。</span></span></li>
+</ul>
+<p><span style="color: #ff0000;">討論區</span></p>
+<p><span style="color: #000000;"></span><span>主題：</span></p>
+<ol>
+<li><span><span>布爾值-對與錯</span></span></li>
+<li><span><span>平等測試</span></span></li>
+<li><span><span>二進制搜索</span></span></li>
+</ol>
+<p><span style="color: #ff0000;">布爾值</span></p>
+<p><span style="color: #000000;"></span><span>在編寫程序時，通常會需要根據其他事物的真實性來做出決策。基本上，您需要根據某物是TRUE還是FALSE來做出決定。</span></p>
+<p><span><span>一個明顯的例子是使用條件句時：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">michele_age</span> <span class="o">=</span> <span class="mi">22</span>
+  <span class="n">truth_value</span> <span class="o">=</span> <span class="n">michele_age</span> <span class="o">&gt;</span> <span class="mi">17</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">truth_value</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Michele can see a rated R movie"</span><span class="p">)</span></code></pre>
+</figure>
+<p><span><span>（我們在上</span></span><a href="https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html"><span><span>一篇文章中</span></span></a><span><span>討論了這種有條件的想法</span><span>。）</span></span></p>
+<p><span><span>但是幕後發生的事情是該語句</span></span><code class="highlighter-rouge">michele_age &gt; 17</code><span><span>正在被評估為</span></span><code class="highlighter-rouge">True</code><span><span>or或</span><span>類型</span></span><code class="highlighter-rouge">False</code><span><span>。</span><span>然後將其存儲在變量中</span></span><code class="highlighter-rouge">truth_value</code><span><span>，然後在條件中進行決策。</span></span></p>
+<p><span><span>這是另一個示例：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">17</span><span class="p">:</span> 
+      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated R movie"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated PG-13 movie"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+      <span class="k">print</span><span class="p">(</span><span class="s">"can only see rated PG movies"</span><span class="p">)</span></code></pre>
+</figure>
+<p><span><span>該</span></span><code class="highlighter-rouge">while True</code><span><span>語句在代碼段開頭的作用是繼續詢問年齡並打印響應-它永遠不會停止。</span><span>（要停止它，請在終端或Python Shell中按CTRL-C）。</span></span></p>
+<p><span><span>這些類型的-</span></span><code class="highlighter-rouge">True</code><span><span>和</span></span><code class="highlighter-rouge">False</code><span><span>被稱為</span></span><strong><span><span>布爾</span></span></strong><span><span>類型或</span></span><strong><span><span>布爾</span></span></strong><span><span>變量。</span><span>它們只能採用</span></span><code class="highlighter-rouge">True</code><span><span>或的</span><span>兩個值</span></span><code class="highlighter-rouge">False</code><span><span>。</span></span></p>
+<p><span><span>要更廣泛地了解Python布爾值，請查看</span></span><a href="http://www.pythonforbeginners.com/basics/boolean"><span><span>這些</span></span></a><span> </span><a href="http://learnpythonthehardway.org/book/ex28.html"><span><span>資源</span></span></a><span><span>。</span></span></p>
+<p><span style="color: #ff0000;">字符串相等性測試</span></p>
+<p><span style="color: #000000;"></span><span>在場景中，您需要測試事物是否彼此相等-數字或字符串或其他。我們在上</span><a href="https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html"><span>一篇文章中</span></a><span>介紹了這個想法，但是這次還是值得再來一次。</span></p>
+<p><span><span>好東西很容易！</span></span></p>
+<p><span><span>請記住，比較數字是否相等是用一個</span></span><code class="highlighter-rouge">==</code><span><span>符號</span><span>完成的</span><span>，如下所示：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">age</span> <span class="o">=</span> <span class="mi">21</span>
+  <span class="k">if</span> <span class="n">age</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You are 21!"</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You're old."</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Young one!"</span><span class="p">)</span></code></pre>
+</figure>
+<p><span><span>事實證明，使用a</span></span><code class="highlighter-rouge">==</code><span><span>來檢查相等性和</span></span><code class="highlighter-rouge">!=</code><span><span>檢查</span><span>不相等性，比較字符串同樣（嘿，..）很簡單</span><span>。</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
+  <span class="k">if</span> <span class="n">password</span> <span class="o">==</span> <span class="s">"unsafepassword"</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You may enter."</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Try again!"</span><span class="p">)</span></code></pre>
+</figure>
+<p><span><span>或者，使用更實用的密碼檢查代碼：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">real_password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
+  <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
+  <span class="k">while</span> <span class="n">user_password</span> <span class="o">!=</span> <span class="n">real_password</span><span class="p">:</span>
+    <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"You may enter!"</span><span class="p">)</span></code></pre>
+</figure>
+<p><span style="color: #ff0000;">二進制搜索</span></p>
+<p><span>有多種方法可以搜索列表中的元素，但沒有一種正確的方法可以搜索列表中的元素。該練習的目的是讓您思考有關列表，搜索和排序的整個練習序列中搜索列表中元素的可能方法。剛開始時，此練習可能看起來很愚蠢且容易，但是您越深入該主題，就越困難。</span></p>
+<p><span><span>“二進制”一詞表示有兩種選擇（在計算機中，通常是0或1，但實際上表示在兩種情況之間可以選擇）。</span><span>“搜索”是尋找東西。</span><span>因此，二進制搜索背後的主要思想是以某種方式尋找事物，該決策樹為您提供尋找位置的決策樹，其中包含兩個選擇。</span><span>讓我舉一個例子：</span></span></p>
+<p><span><span>讓我們看一下清單</span></span><code class="highlighter-rouge">a = [1, 3, 5, 30, 42, 43, 500]</code><span><span>。</span><span>它是一個“有序列表”，或者是列表中元素從小到大的列表。</span><span>假設我們想知道元素</span></span><code class="highlighter-rouge">9</code><span><span>是否在列表中。</span><span>這是我們的工作：</span></span></p>
+<ul>
+<li><span><span>查看列表中的中間元素-它是“ 30”。</span><span>*'9 &lt;30'，因此讓我們忽略'30'右邊的元素。</span></span></li>
+<li><span><span>現在我們正在查看的新列表</span></span><code class="highlighter-rouge">[1, 3, 5]</code><span><span>。</span></span></li>
+<li><span><span>看一下這個新列表的中間元素-是</span></span><code class="highlighter-rouge">3</code><span><span>。</span></span></li>
+<li><span><span>'9&gt; 3'，因此忽略左側的元素</span></span><code class="highlighter-rouge">3</code><span><span>。</span></span></li>
+<li><span><span>我們正在查看的新列表是</span></span><code class="highlighter-rouge">[5]</code><span><span>。</span></span></li>
+<li><span><span>該列表只有一個元素，而沒有</span></span><code class="highlighter-rouge">9</code><span><span>。</span></span></li>
+<li><code class="highlighter-rouge">9</code><span><span><span> </span>不在列表中。</span></span></li>
+</ul>
+<p><span><span>該示例顯示的是，在有序列表中，知道要查找的元素與列表中另一個元素的比較方式，將列表分為兩部分-元素可以位於其中一半，而絕對不能位於其中。</span><span>在我們的列表包含數百萬個元素的情況下，知道我們可以將“搜索空間”減少一半，這將大大提高效率。</span></span></p>
+<p><span><span>在編寫解決方案時，請首先嘗試在不進行二進制搜索的情況下編寫它。</span><span>然後，當您想嘗試實現二進制搜索時，編寫一個單獨的函數。</span><span>在解決方案中，我將給出一個示例，說明如何使用Python編寫二進制搜索。</span></span></p>
+<h3>解答</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def find(ordered_list, element_to_find):
+  start_index = 1
+  end_index = len(ordered_list) - 1
+  
+  while True:
+    middle_index = (end_index - start_index) / 2
+    
+    if middle_index &lt; start_index or middle_index &gt; end_index or middle_index &lt; 0:
+      return False
+    
+    middle_element = ordered_list[middle_index]
+    if middle_element == element_to_find:
+      return True
+    elif middle_element &lt; element_to_find:
+      end_index = middle_index
+    else:
+      start_index = middle_index
+  
+if __name__=="__main__":
+  l = [2, 4, 6, 8, 10]
+  print(find(l, 5)) # prints False
+  print(find(l, 10)) # prints True
+  print(find(l, -1)) # prints False
+  print(find(l, 2)) # prints True</pre>
+<h2><span>第21題 Write To A File(寫入文件)</span></h2>
+<h3><span>題目</span></h3>
+<p><span style="color: #ff0000;">Exercise 21</span></p>
+<p><span style="color: #000000;"></span>Take the code from the<span> </span><a href="https://www.practicepython.org/exercise/2014/06/06/17-decode-a-web-page.html">How To Decode A Website</a><span> </span>exercise (if you didn’t do it or just want to play with some different code, use the code from the<span> </span><a href="https://www.practicepython.org/solution/2014/07/10/17-decode-a-web-page-solutions.html">solution</a>), and instead of printing the results to a screen, write the results to a txt file. In your code, just make up a name for the file you are saving to.</p>
+<p>Extras:</p>
+<ul>
+<li>Ask the user to specify the name of the output file that will be saved.</li>
+</ul>
+<p><span style="color: #ff0000;">Discussion<span style="color: #000000;"></span></span></p>
+<p>Topics:</p>
+<ol>
+<li>Writing to a file</li>
+<li>Gotchas and warnings</li>
+</ol>
+<p><span style="color: #ff0000;">Saving to a file<span style="color: #000000;"></span></span></p>
+<p>Python makes it very easy to write to a file. Depending on what kind of file you want to write to and what kind of data you are writing, your options are plenty. I will show you the simplest form of writing to a file - writing plain text to a plain old text file. In other words, writing a string to a<span> </span><code class="highlighter-rouge">.txt</code><span> </span>file.</p>
+<p>The code looks like this:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'file_to_save.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">open_file</span><span class="p">:</span>
+    <span class="n">open_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'A string to write'</span><span class="p">)</span></code></pre>
+</figure>
+<p>An alternate way of writing the same code is like so:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">open_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'file_to_save.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+  <span class="n">open_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'A string to write'</span><span class="p">)</span>
+  <span class="n">open_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre>
+</figure>
+<p>The first is considered better programming practice, but the second might explain a little bit better what is going on in the first code sample.</p>
+<p>Let’s go through line by line.</p>
+<p>The<span> </span><code class="highlighter-rouge">with open('file_to_save.txt', 'w') as open_file</code><span> </span>syntax is new for us - all it means is that inside the code block indented underneath, there will be a variable called<span> </span><code class="highlighter-rouge">open_file</code><span> </span>that will represent the file object. You can pick any name for this file - it is just a variable name. The<span> </span><code class="highlighter-rouge">open()</code><span> </span>function takes two arguments - the first is the name of a file as a string (if the file does not exist, Python will create it), and a second argument that represents<span> </span><em>how</em><span> </span>the file should be opened. There are a few ways you can open files (read all about it<span> </span><a href="https://docs.python.org/3.3/tutorial/inputoutput.html#reading-and-writing-files">at the official Python documentation</a>), but in short, there are two most common ones:<span> </span><code class="highlighter-rouge">'r'</code><span> </span>and<span> </span><code class="highlighter-rouge">'w'</code>.<span> </span><code class="highlighter-rouge">'r'</code><span> </span>stands for “read only” and<span> </span><code class="highlighter-rouge">'w'</code><span> </span>stands for “write only” (you can open for both read and write using<span> </span><code class="highlighter-rouge">'r+'</code>). You should tell Python which way you want to open the file - you don’t want to modify a file you are only looking at, and opening a file with<span> </span><code class="highlighter-rouge">'w'</code><span> </span>when you want to only read it will overwrite the old file.</p>
+<p>When you open a file, it will look for it in the same directory as the Python program. If there is no file with that name, Python will create a file in that directory with the given name. To look for files in other directories, use the<span> </span><code class="highlighter-rouge">../</code><span> </span>notation to move up and down directories as necessary.</p>
+<p>As soon as the program exists the<span> </span><code class="highlighter-rouge">with</code><span> </span>code block for any reason, it will close the file. In the second code example case, I created the file object by opening the file and saving the object to my variable<span> </span><code class="highlighter-rouge">open_file</code>. I then had to remember to close the file manually at the end of my program. This is considered worse programming practice, because in case there is an error in the program and it terminates before hitting the<span> </span><code class="highlighter-rouge">.close()</code><span> </span>statement, there will be a floating open file object somewhere in memory. You do this enough times and it becomes a problem, especially for production environments. For playing around with Python, this is not usually a problem, but why not learn how to program correctly the first time?</p>
+<p>The<span> </span><code class="highlighter-rouge">write()</code><span> </span>portion is simple - call<span> </span><code class="highlighter-rouge">.write()</code><span> </span>with a string (if something is not a string, turn it into a string first), and it will write to the end of the file.</p>
+<p>When the program exists the<span> </span><code class="highlighter-rouge">with</code><span> </span>statement, the file will automatically be saved. In fact, every time after a<span> </span><code class="highlighter-rouge">.write()</code><span> </span>statement, the file will be automatically saved.</p>
+<p><span style="color: #ff0000;">Gotchas and Warnings<span style="color: #000000;"></span></span></p>
+<p>This all seems simple enough, but there are a few caveats to the file-writing endeavor.</p>
+<ol>
+<li>You always want to make sure you close a file. The easiest strategy for this is explained above - use the<span> </span><code class="highlighter-rouge">with</code><span> </span>statement rather than trying to manually remember to<span> </span><code class="highlighter-rouge">.close()</code><span> </span>the file.</li>
+<li>Opening a file for writing with<span> </span><code class="highlighter-rouge">'w'</code><span> </span>will overwrite any file that currently exists with that name. If you have previously written data to that file, it is now gone as soon as Python opens it.</li>
+<li>You can write<span> </span><em>any</em><span> </span>kind of object to any kind of file in Python, as long as you specify the correct format. The simplest thing to do is to write strings to a<span> </span><code class="highlighter-rouge">.txt</code><span> </span>file. But remember - you have to convert numbers or objects into strings before you write them to a file. In a later exercise, we’ll talk about writing to other formats.</li>
+</ol>
+<p>The best way to remember the caveats is to explore them yourself, so have at it!</p>
+<p><span style="color: #ff0000;">練習21<span style="color: #000000;"></span></span></p>
+<p><span>從“</span><a href="https://www.practicepython.org/exercise/2014/06/06/17-decode-a-web-page.html"><span>如何對網站</span></a><span>進行<a href="https://www.practicepython.org/exercise/2014/06/06/17-decode-a-web-page.html">解碼”</a>練習中獲取代碼（如果您沒有這樣做，或者只是想使用一些不同的代碼，請使用</span><a href="https://www.practicepython.org/solution/2014/07/10/17-decode-a-web-page-solutions.html"><span>解決方案中</span></a><span>的代碼），而不是將結果打印到屏幕上，而是將結果寫到屏幕上到txt文件。在您的代碼中，只需為要保存到的文件命名。</span></p>
+<p><span><span>附加功能：</span></span></p>
+<ul>
+<li><span><span>要求用戶指定將要保存的輸出文件的名稱</span></span></li>
+</ul>
+<p><span style="color: #ff0000;">討論區<span style="color: #000000;"></span></span></p>
+<p><span>主題：</span></p>
+<ol>
+<li><span><span>寫入文件</span></span></li>
+<li><span><span>陷阱和警告</span></span></li>
+</ol>
+<p><span style="color: #ff0000;">保存到文件<span style="color: #000000;"></span></span></p>
+<p><span>Python使寫入文件變得非常容易。根據要寫入的文件類型和要寫入的數據類型，您有很多選擇。我將向您展示寫入文件的最簡單形式-將純文本寫入純舊文本文件。換句話說，將字符串寫入</span><code class="highlighter-rouge">.txt</code><span>文件。</span></p>
+<p><span><span>代碼如下：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'file_to_save.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">open_file</span><span class="p">:</span>
+    <span class="n">open_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'A string to write'</span><span class="p">)</span></code></pre>
+</figure>
+<p><span><span>編寫相同代碼的另一種方法是這樣的：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">open_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'file_to_save.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+  <span class="n">open_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'A string to write'</span><span class="p">)</span>
+  <span class="n">open_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre>
+</figure>
+<p><span><span>第一種被認為是更好的編程實踐，但是第二種可能會更好地解釋第一個代碼示例中發生的事情。</span></span></p>
+<p><span><span>讓我們逐行進行。</span></span></p>
+<p><span><span>該</span></span><code class="highlighter-rouge">with open('file_to_save.txt', 'w') as open_file</code><span><span>語法是新的我們-所有這意味著內的代碼塊縮進下，會有一個叫做變量</span></span><code class="highlighter-rouge">open_file</code><span><span>將代表文件對象。</span><span>您可以為此文件選擇任何名稱-它只是一個變量名。</span><span>該</span></span><code class="highlighter-rouge">open()</code><span><span>函數有兩個參數-第一個是文件作為一個字符串（如果文件不存在，Python將創建它），並表示第二個參數的名稱</span></span><em><span><span>如何</span></span></em><span><span>文件應該被打開。</span><span>您可以通過幾種方式打開文件（有關詳細信息</span><span>，請參見</span></span><a href="https://docs.python.org/3.3/tutorial/inputoutput.html#reading-and-writing-files"><span><span>Python的官方文檔</span></span></a><span><span>），總之，有兩種最常見的方式：</span></span><code class="highlighter-rouge">'r'</code><span><span>和</span></span><code class="highlighter-rouge">'w'</code><span><span>。</span></span><code class="highlighter-rouge">'r'</code><span><span>代表“只讀”和</span></span><code class="highlighter-rouge">'w'</code><span><span>“只寫”（您可以使用</span></span><code class="highlighter-rouge">'r+'</code><span><span>）。</span><span>您應該告訴Python您想以哪種方式打開文件-您不想修改僅查看的文件，</span></span><code class="highlighter-rouge">'w'</code><span><span>而只想讀取</span><span>文件</span><span>時</span><span>打開文件</span><span>將覆蓋舊文件。</span></span></p>
+<p><span><span>當您打開文件時，它將在與Python程序相同的目錄中查找。</span><span>如果沒有使用該名稱的文件，Python將在該目錄中使用給定名稱創建一個文件。</span><span>要在其他目錄中查找文件，請</span></span><code class="highlighter-rouge">../</code><span><span>根據需要</span><span>使用</span><span>表示法在目錄中上下移動。</span></span></p>
+<p><span><span>一旦程序</span></span><code class="highlighter-rouge">with</code><span><span>由於某種原因</span><span>存在</span><span>代碼塊，它將關閉文件。</span><span>在第二個代碼示例案例中，我通過打開文件並將對象保存到我的變量中來創建文件對象</span></span><code class="highlighter-rouge">open_file</code><span><span>。</span><span>然後，我必須記住在程序結束時手動關閉文件。</span><span>這被認為是較差的編程習慣，因為如果程序中出現錯誤並且在命中該</span></span><code class="highlighter-rouge">.close()</code><span><span>語句</span><span>之前終止該錯誤，則</span><span>在內存中的某個位置將有一個浮動的打開文件對象。</span><span>您執行此操作的次數足夠多，這將成為一個問題，尤其是對於生產環境。</span><span>對於使用Python來說，這通常不是問題，但是為什麼不第一次學習如何正確編程呢？</span></span></p>
+<p><span><span>該</span></span><code class="highlighter-rouge">write()</code><span><span>部分很簡單-</span></span><code class="highlighter-rouge">.write()</code><span><span>用字符串</span><span>調用</span><span>（如果不是字符串，請先將其轉換為字符串），然後它將寫入文件的末尾。</span></span></p>
+<p><span><span>當程序存在該</span></span><code class="highlighter-rouge">with</code><span><span>語句時，文件將自動保存。</span><span>實際上，每次</span></span><code class="highlighter-rouge">.write()</code><span><span>聲明後，文件都會自動保存。</span></span></p>
+<p><span style="color: #ff0000;">陷阱和警告<span style="color: #000000;"></span></span></p>
+<p><span>這一切似乎很簡單，但是文件編寫工作有一些警告。</span></p>
+<ol>
+<li><span><span>您始終要確保關閉文件。</span><span>上面已說明了最簡單的策略-使用該</span></span><code class="highlighter-rouge">with</code><span><span>語句，而不是嘗試手動記住</span></span><code class="highlighter-rouge">.close()</code><span><span>該文件。</span></span></li>
+<li><span><span>打開要寫入的文件</span></span><code class="highlighter-rouge">'w'</code><span><span>將覆蓋該名稱當前存在的任何文件。</span><span>如果您之前已將數據寫入該文件，則Python打開後立即消失。</span></span></li>
+<li><span><span>只要指定正確的格式，就可以在Python中將</span></span><em><span><span>任何</span></span></em><span><span>類型的對象</span><span>寫入</span><em><span>任何</span></em><span>類型的文件。</span><span>最簡單的方法是將字符串寫入</span></span><code class="highlighter-rouge">.txt</code><span><span>文件。</span><span>但是請記住-在將數字或對象寫入文件之前，必須將其轉換為字符串。</span><span>在以後的練習中，我們將討論編寫其他格式的內容。</span></span></li>
+</ol>
+<h3>解答</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import requests
+from bs4 import BeautifulSoup
+ 
+base_url = 'http://www.nytimes.com'
+r = requests.get(base_url)
+soup = BeautifulSoup(r.text)
+
+filename = input("File to save to: ")
+
+with open(filename, 'w') as f:
+  for story_heading in soup.find_all(class_="story-heading"): 
+      if story_heading.a: 
+          f.write(story_heading.a.text.replace("\n", " ").strip())
+      else: 
+          f.write(story_heading.contents[0].strip())</pre>
+<p></p>
