@@ -2,7 +2,7 @@
 <p><span>In this lesson, we will be going deeper into the expansion cards that can be plugged into motherboards. We will focus on the installation of a video card. It is important to note that the same principles for installing a video card will apply to installing any expansion card. Next, we will cover the central processing units from two major manufacturers: Intel and AMD. Finally, we will review the storage devices that our computers can use.</span></p>
 <p><span><img alt="An expansion card with chips on the board and mounts. It is held in a person’s hand." src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH07/webcontent/PCH07/image1.png"/></span></p>
 <h1>W10</h1>
-<h1>Homework</h1>
+<h1>hw1</h1>
 <h2>PCH 7</h2>
 <h3 class="title">Overview</h3>
 <p><span style="background-color: #ffffff; color: #ff0000;" title="Quick scroll up">Expansion Slots</span></p>
@@ -834,4 +834,59 @@ with open(filename, 'w') as f:
           f.write(story_heading.a.text.replace("\n", " ").strip())
       else: 
           f.write(story_heading.contents[0].strip())</pre>
-<p></p>
+<h2><span>第24題 Draw A Game Board(畫遊戲板)</span></h2>
+<h3><span>題目</span></h3>
+<p><span style="color: #ff0000;">Exercise 24</span></p>
+<p><em>This exercise is Part 1 of 4 of the Tic Tac Toe exercise series. The other exercises are:<span> </span><a href="https://www.practicepython.org/exercise/2015/11/16/26-check-tic-tac-toe.html">Part 2</a>,<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a>, and<span> </span><a href="https://www.practicepython.org/exercise/2016/08/03/29-tic-tac-toe-game.html">Part 4</a>.</em></p>
+<p>Time for some fake graphics! Let’s say we want to draw game boards that look like this:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python"> <span class="o">---</span> <span class="o">---</span> <span class="o">---</span> 
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> 
+ <span class="o">---</span> <span class="o">---</span> <span class="o">---</span>  
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> 
+ <span class="o">---</span> <span class="o">---</span> <span class="o">---</span>  
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> 
+ <span class="o">---</span> <span class="o">---</span> <span class="o">---</span> </code></pre>
+</figure>
+<p>This one is 3x3 (like in tic tac toe). Obviously, they come in many other sizes (8x8 for chess, 19x19 for Go, and many more).</p>
+<p>Ask the user what size game board they want to draw, and draw it for them to the screen using Python’s<span> </span><code class="highlighter-rouge">print</code><span> </span>statement.</p>
+<p>Remember that in Python 3, printing to the screen is accomplished by</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="k">print</span><span class="p">(</span><span class="s">"Thing to show on screen"</span><span class="p">)</span></code></pre>
+</figure>
+<p><em>Hint: this requires some use of functions, as were discussed<span> </span><a href="https://www.practicepython.org/exercise/2014/04/16/11-check-primality-functions.html">previously on this blog</a><span> </span>and<span> </span><a href="http://www.tutorialspoint.com/python/python_functions.htm">elsewhere on the Internet, like this TutorialsPoint link</a>.</em></p>
+<p><span style="color: #ff0000;">Topics and links for more information<span style="color: #000000;"></span></span></p>
+<p>The main topic of this exercise is functions. They are tricky, and deserve lots of practice and thought. Here are a few links in case you want some more reading.</p>
+<p><span style="color: #ff0000;">練習24</span></p>
+<p><em><span>此練習是Tic Tac Toe練習系列4的第1部分。其他練習是：</span><a href="https://www.practicepython.org/exercise/2015/11/16/26-check-tic-tac-toe.html"><span>第2部分</span></a><span>，</span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html"><span>第3</span></a><span></span><a href="https://www.practicepython.org/exercise/2016/08/03/29-tic-tac-toe-game.html"><span>部分</span></a><span>和<a href="https://www.practicepython.org/exercise/2016/08/03/29-tic-tac-toe-game.html">第4部分</a>。</span></em></p>
+<p><span><span>是時候購買一些假圖形了！</span><span>假設我們要繪製如下游戲板：</span></span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python"> <span class="o">---</span> <span class="o">---</span> <span class="o">---</span> 
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> 
+ <span class="o">---</span> <span class="o">---</span> <span class="o">---</span>  
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> 
+ <span class="o">---</span> <span class="o">---</span> <span class="o">---</span>  
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span> 
+ <span class="o">---</span> <span class="o">---</span> <span class="o">---</span> </code></pre>
+</figure>
+<p><span><span>這是3x3（就像井字遊戲一樣）。</span><span>顯然，它們有許多其他尺寸（國際象棋為8x8，圍棋為19x19等）。</span></span></p>
+<p><span><span>詢問用戶他們想要繪製什麼尺寸的遊戲板，並使用Python的</span></span><code class="highlighter-rouge">print</code><span><span>語句</span><span>將其繪製到屏幕上</span><span>。</span></span></p>
+<p><span><span>請記住，在Python 3中，通過以下方式完成在屏幕上的打印</span></span></p>
+<p><span style="color: #ff0000;">主題和鏈接，以獲取更多信息<span style="color: #000000;"></span></span></p>
+<p><span>本練習的主要主題是功能。它們很棘手，值得大量實踐和思考。這裡有一些鏈接，以備您需要更多閱讀。</span></p>
+<h3>解答</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">ef drawboard(kamal):
+    kamal = int(kamal)
+    i = 0
+    ho = "--- "
+    ve = "|   "
+    ho = ho * kamal
+    ve = ve * (kamal+1)
+    while i &lt; kamal+1:
+        print ho
+        if not (i == kamal):
+            print ve
+        i += 1
+    </pre>
+<h1>課程心得</h1>
+<p>上完一個學期的課程後，對於程式設計總算是有比較深入的了解，python這套程式語言是以前高職時代從來沒有接觸過的，但在學習中不然發現它是一套相對簡單的語言，不過學習過程依然還是要付出相當的努力及時間才行，經過了一個學期我依然無法非常得心應手，看來是需要再繼續努力才行，畢竟學海無涯，沒有絕對的學會一項技能，只有經驗德多寡影響專業程度，但我相信努力研習程式設計這方面的能力對於未來是很有幫助的，以前常說要在社會生存需要一技之能，現在一技已經不夠用了，人生的職涯這麼長，不可能總是做某方面的專才，而是要成為全才，尤其我們機械設計是必須甚麼都懂的，未來不管是加工或是管理方面電腦化都是必經的道路，未來若是無法具備與電腦溝通的能力，那必定會被時代所淘汰，因此我認為這堂課即使不簡單，但它未來可以帶來的成果絕對是可以期待的。</p>
